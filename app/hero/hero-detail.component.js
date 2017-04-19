@@ -5,6 +5,16 @@
 
     var ctrl = this;
 
+    ctrl.updateLocation = function (location_field_name, location_field_value) {
+
+      ctrl.onUpdate(
+        {
+          'hero': ctrl.heroInfo,
+          'prop': location_field_name,
+          'value': location_field_value
+        }
+      );
+    }
   }
 
   angular
@@ -14,8 +24,10 @@
       controller: HeroDetailController,
       templateUrl: 'hero/hero-detail.component.html',
       bindings: {
-        heroinfo: '='
+        heroInfo: '=',
+        onUpdate: '&'
       }
-    })
+
+    });
 
 })(window.angular);

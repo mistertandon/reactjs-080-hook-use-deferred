@@ -1,1 +1,1 @@
-<hero-detail heroinfo="hero" ng-repeat="hero in $ctrl.heroeslist"></hero-detail>
+<hero-detail hero-info="hero" on-update="$ctrl.updateLocation(hero, prop, value)" ng-repeat="hero in $ctrl.heroeslist"></hero-detail>

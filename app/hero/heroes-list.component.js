@@ -20,6 +20,15 @@
       }
     ];
 
+    /**
+     * This functon is used to update hero specific location.
+     * `updateLocation` function will be invoked by 'editableField'
+     * component.
+     */
+    myctrl.updateLocation = function (hero_obj, location_prop, location_value) {
+
+      hero_obj[location_prop] = location_value;
+    }
   }
 
   angular

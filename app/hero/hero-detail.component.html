@@ -1,4 +1,4 @@
 <div class="well">
-  {{$ctrl.heroinfo.name}}
-  <editable-field heroinfo="$ctrl.heroinfo"></editable-field>
+  {{$ctrl.heroInfo.name}}
+  <editable-field field-type='text' location-value="$ctrl.heroInfo.location" on-update="$ctrl.updateLocation('location', value)"></editable-field>
 </div>

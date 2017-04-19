@@ -1,1 +1,6 @@
-{{$ctrl.heroinfo}}
+<div ng-switch="$ctrl.isEditMode">
+  <input type="{{$ctrl.fieldType}}" class="form-control" ng-model="$ctrl.locationValue" ng-switch-when="true">
+  <span ng-switch-default>{{$ctrl.locationValue}}</span>
+</div>
+<button class="btn btn-small btn-primary" ng-click="$ctrl.handleModeChange()">{{$ctrl.isEditMode?'Save':'Edit'}}</button>
+<button class="btn btn-small btn-success" ng-click="$ctrl.resetLocation()" ng-if="$ctrl.isEditMode">Reset</button>

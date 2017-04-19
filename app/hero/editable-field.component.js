@@ -33,8 +33,9 @@
      * This function is used to reset location in middle of
      * `location editing`
      */
-    ctrl.resetLocation = fuction() {
-       
+    ctrl.resetLocation = function () {
+
+      ctrl.locationValue = ctrl.locationValueCopy;
     }
 
   }

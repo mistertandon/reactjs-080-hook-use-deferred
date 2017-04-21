@@ -1,3 +1,15 @@
 <div class="well" ng-controller="FilterHomeController as filterHomeCtrl">
   <h5>{{filterHomeCtrl.title}}</h5>
+
+  <ol class="list-style">
+    <li ng-repeat="(key, value) in filterHomeCtrl.candidatesList track by $index">
+      {{value.firstName}} : {{value.Sex}}
+    </li>
+  </ol>
+
+  <div class="form-group">
+    <button class="btn btn-primary" ng-click="filterHomeCtrl.filterCandidateBySex('Male')">Male Candidate</button>
+    <button class="btn btn-danger" ng-click="filterHomeCtrl.filterCandidateBySex('Female')">Female Candidate</button>
+    <button class="btn btn-info" ng-click="filterHomeCtrl.filterCandidateReset()">Reset</button>
+  </div>
 </div>

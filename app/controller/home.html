@@ -1,4 +1,18 @@
-<div ng-controller="HomeController as homeCtrl">
+<div class="well" ng-controller="HomeController as homeCtrl">
   <h4> {{homeCtrl.topic.title}} </h4>
 
+
+  <div class="well" ng-controller="OuterController as outerCtrl">
+    <h4> {{outerCtrl.user_name}} saying {{outerCtrl.greetings}} </h4>
+
+    <div class="well" ng-controller="MiddleController as middleCtrl">
+      <h4> {{outerCtrl.user_name}} : {{middleCtrl.greetings}} </h4>
+      <greeting greeting-msg="{{middleCtrl.greetings}}" on-update="middleCtrl.updateGreetingMessage(newmsg)"></greeting>
+
+      <div class="well" ng-controller="InternalController as internalCtrl">
+        <h4> {{internalCtrl.user_name}} saying {{internalCtrl.greetings}} </h4>
+
+      </div>
+    </div>
+  </div>
 </div>

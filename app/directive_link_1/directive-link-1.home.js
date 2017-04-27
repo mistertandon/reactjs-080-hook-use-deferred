@@ -7,8 +7,32 @@
 
     self.greeting = "Hello everyone";
   }
-  angular
 
+  /**
+   * `teacherFn` function contains 'teacher' directive definition.
+   */
+  var teacherFn = function () {
+
+    return {
+
+      restrict: 'E',
+      templateUrl: 'directive_link_1/teacher-directive.html'
+    };
+  }
+
+  /**
+   * `studentFn` function contains 'student' directive definition.
+   */
+  var studentFn = function () {
+
+    return {
+
+      restrict: 'E',
+      templateUrl: 'directive_link_1/student-directive.html'
+    };
+  }
+
+  angular
     .module('directive-link-1.home', [
 
     ])
@@ -24,6 +48,10 @@
 
     }])
 
-    .controller('directiveLink1HomeController', ["$scope", directiveLink1HomeControllerFn]);
+    .controller('directiveLink1HomeController', ["$scope", directiveLink1HomeControllerFn])
+
+    .directive('teacher', teacherFn)
+
+    .directive('student', studentFn);
 
 })(window.angular);

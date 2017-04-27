@@ -3,10 +3,10 @@
 
   angular
 
-    .module('directiveLink1App', [
+    .module('directive-link-1.app', [
       'ui.router',
-      'uiRouterStyles'
-      //,      'directiveLink1.home'
+      'uiRouterStyles',
+      'directive-link-1.home'
     ])
 
     .config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {

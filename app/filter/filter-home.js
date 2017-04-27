@@ -22,13 +22,13 @@
     /**
      * This function is used to apply filter on candidatesList on the basis of 'Sex'
      */
-    self.filterCandidateBySex = function (sex) {
+    self.filterCandidateByGender = function (sex) {
 
-      self.candidatesList = $filter('CandidateFilteriationBySex')(self.candidatesListRef, sex);
+      self.candidatesList = $filter('CandidateFilteriationByGender')(self.candidatesListRef, sex);
     }
 
     /**
-     * This function is used to reset `CandidateFilteriationBySex` filter.
+     * This function is used to reset `CandidateFilteriationByGender` filter.
      */
     self.filterCandidateReset = function () {
 
@@ -37,9 +37,9 @@
   }
 
   /**
-   * This function contains definition for `CandidateFilteriationBySex` filter.
+   * This function contains definition for `CandidateFilteriationByGender` filter.
    */
-  var CandidateFilteriationBySexFn = function () {
+  var CandidateFilteriationByGenderFn = function () {
 
     return function (candidateList, sex) {
 
@@ -71,6 +71,6 @@
 
     .controller('FilterHomeController', ["$filter", FilterHomeControllerFn])
 
-    .filter('CandidateFilteriationBySex', CandidateFilteriationBySexFn);
+    .filter('CandidateFilteriationByGender', CandidateFilteriationByGenderFn);
 
 })(window.angular);

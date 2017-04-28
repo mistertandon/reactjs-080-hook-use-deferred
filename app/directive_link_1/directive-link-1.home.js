@@ -6,6 +6,16 @@
     var self = this;
 
     self.greeting = "Hello everyone";
+    self.globalMessage = "Live and let live";
+
+    /**
+     * This function is used to update greeting message.
+     */
+    self.greetingUpdation = function (newGreetingMessage) {
+
+      self.greeting = newGreetingMessage;
+    };
+
   }
 
   /**
@@ -16,7 +26,28 @@
     return {
 
       restrict: 'E',
-      templateUrl: 'directive_link_1/teacher-directive.html'
+      templateUrl: 'directive_link_1/teacher-directive.html',
+      scope: {
+        globalMessage: '=',
+        updateGreetingMsg: '&'
+      },
+      controller: function () {
+
+        var self = this;
+
+        self.controllerPriority = "Teacher link controller : Primary";
+
+      },
+      controllerAs: 'TeacherLinkController',
+      link: {
+        pre: function (scope, elem, attr, ctrl) {
+
+          scope.teacherInfo = {
+            'name': 'mistertandon',
+            'specialization': 'frontend'
+          };
+        }
+      }
     };
   }
 
@@ -28,7 +59,13 @@
     return {
 
       restrict: 'E',
-      templateUrl: 'directive_link_1/student-directive.html'
+      require: '^teacher',
+      templateUrl: 'directive_link_1/student-directive.html',
+      link: {
+        post: function (scope, elem, attr, ctrl) {
+
+        }
+      }
     };
   }
 

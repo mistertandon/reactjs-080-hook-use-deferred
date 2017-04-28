@@ -1,1 +1,19 @@
-{{directiveLink1HomeCtrl.greeting}} from student directive
+<!--
+  If we are not going to define `scope` key into directive, we can access controller block properties from 
+  directive template in this way
+
+  Student Directive : {{directiveLink1HomeCtrl.greeting}} 
+  Note : How we have attached controlle into template:
+  [ div class="well" ng-controller="directiveLink1HomeController as directiveLink1HomeCtrl"> ]
+-->
+<div class="well">
+  Student Directive : [ {{TeacherLinkController.controllerPriority}} ]
+
+  <div class="form-group">
+    <!--
+      `updateGreetingMsg` function defined into `directiveLink1HomeControllerFn` controller.
+    -->
+    <button class="btn btn-primary" ng-click="updateGreetingMsg({'greetingMsg': 'Student Directive : Greetings Msg updated'})">Update</button>
+  </div>
+
+</div>

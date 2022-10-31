@@ -1,10 +1,12 @@
-import react from 'react';
+import react from "react";
+import UserList from "./UserList";
 
 const User = () => {
-
-    return (<>
-    Hello from User
-    </>)
-}
+  return (
+    <>
+      <UserList />
+    </>
+  );
+};
 
 export default User;

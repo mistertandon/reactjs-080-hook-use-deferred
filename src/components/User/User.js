@@ -1,4 +1,3 @@
-import react from "react";
 import UserList from "./UserList";
 
 const User = () => {
